@@ -11,6 +11,12 @@ public class BallMovement : MonoBehaviour
     [SerializeField]
     private Button shootButton;
 
+    [SerializeField]
+    private Vector3 forceValues = new Vector3(0, 400, 400);
+
+    [SerializeField]
+    private Vector3 rotateValues = new Vector3(20, 5, 2);
+
     public void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -94,14 +100,14 @@ public class BallMovement : MonoBehaviour
     public void ShootNew()
     {
         rb.isKinematic = false;
-        rb.AddForce(0, 400, 400);
+        rb.AddForce(forceValues);
         isShot = true;
         shootButton.interactable = false;
     }
 
     private void FixedUpdate()
     {
-        if (isShot) transform.Rotate(20, 5, 2);
+        if (isShot) transform.Rotate(rotateValues);
     }
 }
 

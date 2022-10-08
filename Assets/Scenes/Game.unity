@@ -700,6 +700,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootButton: {fileID: 1799974223}
+  forceValues: {x: 0, y: 400, z: 400}
+  rotateValues: {x: 20, y: 5, z: 2}
 --- !u!54 &986832330
 Rigidbody:
   m_ObjectHideFlags: 0
