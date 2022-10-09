@@ -12,7 +12,7 @@ public class BallMovement : MonoBehaviour
     private Button shootButton;
 
     [SerializeField]
-    private Vector3 forceValues = new Vector3(0, 400, 400);
+    private Vector3 forceAmount = new Vector3(0, 500, 300);
 
     [SerializeField]
     private Vector3 rotateValues = new Vector3(20, 5, 2);
@@ -100,7 +100,7 @@ public class BallMovement : MonoBehaviour
     public void ShootNew()
     {
         rb.isKinematic = false;
-        rb.AddForce(forceValues);
+        rb.AddForce(forceAmount);
         isShot = true;
         shootButton.interactable = false;
     }
