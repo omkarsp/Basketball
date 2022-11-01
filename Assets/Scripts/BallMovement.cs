@@ -17,6 +17,9 @@ public class BallMovement : MonoBehaviour
     [SerializeField]
     private Vector3 rotateValues = new Vector3(20, 5, 2);
 
+    [SerializeField]
+    private ForceBar forceBar;
+
     public void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -99,6 +102,8 @@ public class BallMovement : MonoBehaviour
 
     public void ShootNew()
     {
+        forceAmount.y = forceBar.GetforceValue();
+        Debug.Log(forceAmount.y);
         rb.isKinematic = false;
         rb.AddForce(forceAmount);
         isShot = true;

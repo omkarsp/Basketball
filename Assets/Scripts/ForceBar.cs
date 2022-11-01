@@ -7,6 +7,12 @@ public class ForceBar : MonoBehaviour
     private float forceValue = 0.5f;
 
     [SerializeField]
+    private float minForceValue = 200;
+
+    [SerializeField]
+    private float maxForceValue = 800;
+
+    [SerializeField]
     private Color lowColor = Color.green;
 
     [SerializeField]
@@ -61,6 +67,8 @@ public class ForceBar : MonoBehaviour
                 var colorPercentage = Mathf.InverseLerp(0.5f, 1, percentage);
                 forceBarImage.color = Color.Lerp(midColor, highColor, colorPercentage);
             }
+
+            forceValue = Mathf.Lerp(minForceValue, maxForceValue, percentage);
 
             yield return new WaitForFixedUpdate();
         }
